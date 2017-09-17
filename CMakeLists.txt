@@ -63,9 +63,12 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 #./src/geometry/vtk_utils.cpp)
 
 add_library(geometry ${GEOMETRY_CPPS})
+
 #${GEOMETRY_HEADERS})
 
-target_link_libraries(geometry utils ${CGAL_LIBRARIES})
+target_link_libraries(geometry utils)
+
+#${CGAL_LIBRARIES})
 
 # /Users/dillon/CppWorkspace/gca/src/triangle_lib/triangle.o)
 
@@ -89,4 +92,5 @@ SET(GEOMETRY_TEST_FILES test/plane_tests.cpp
 			
 
 add_executable(geometry-tests test/main_geometry.cpp ${GEOMETRY_TEST_FILES})
+target_link_libraries(geometry-tests geometry utils)
 
