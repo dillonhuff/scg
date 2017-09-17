@@ -15,23 +15,23 @@ SET(UTILS_HEADERS ./src/utils/algorithm.h
 
 add_library(utils ${UTILS_CPPS} ${UTILS_HEADERS})
 
-SET(GEOMETRY_HEADERS ./src/geometry/line.h
-		     ./src/geometry/surface.h
-		     ./src/geometry/point.h
-		     ./src/geometry/plane.h
-		     ./src/geometry/offset.h
-		     ./src/geometry/polygon_3.h
-	    ./src/geometry/b_spline.h
-	    ./src/geometry/extrusion.h
-	    ./src/geometry/spline_sampling.h
-	    ./src/geometry/matrix.h
-	    ./src/geometry/rotation.h
-	    ./src/geometry/triangle.h
-	    ./src/geometry/triangular_mesh.h
-	    ./src/geometry/homogeneous_transformation.h
-	    ./src/geometry/mesh_operations.h
-	    ./src/geometry/vtk_debug.h
-	    ./src/geometry/vtk_utils.h)
+# SET(GEOMETRY_HEADERS ./src/geometry/line.h
+# 		     ./src/geometry/surface.h
+# 		     ./src/geometry/point.h
+# 		     ./src/geometry/plane.h
+# 		     ./src/geometry/offset.h
+# 		     ./src/geometry/polygon_3.h
+# 	    ./src/geometry/b_spline.h
+# 	    ./src/geometry/extrusion.h
+# 	    ./src/geometry/spline_sampling.h
+# 	    ./src/geometry/matrix.h
+# 	    ./src/geometry/rotation.h
+# 	    ./src/geometry/triangle.h
+# 	    ./src/geometry/triangular_mesh.h
+# 	    ./src/geometry/homogeneous_transformation.h
+# 	    ./src/geometry/mesh_operations.h
+# 	    #./src/geometry/vtk_debug.h
+# 	    ./src/geometry/vtk_utils.h)
 
 SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 		  ./src/geometry/surface.cpp
@@ -55,11 +55,11 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 ./src/geometry/trimesh.cpp
 	 ./src/geometry/trimesh_types.cpp
 	 ./src/geometry/homogeneous_transformation.cpp
-	 ./src/geometry/mesh_operations.cpp
+	 #./src/geometry/mesh_operations.cpp
 	 ./src/geometry/voxel_volume.cpp
-	 ./src/geometry/voxel_volume_debug.cpp
-	 ./src/geometry/vtk_debug.cpp
-	 ./src/geometry/vtk_utils.cpp)
+	 ./src/geometry/voxel_volume_debug.cpp)
+	 #./src/geometry/vtk_debug.cpp
+	 #./src/geometry/vtk_utils.cpp)
 
 add_library(geometry ${GEOMETRY_CPPS} ${GEOMETRY_HEADERS})
 target_link_libraries(geometry utils ${CGAL_LIBRARIES})
