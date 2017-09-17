@@ -2,7 +2,7 @@
 
 #include "geometry/polygon.h"
 #include "geometry/polyline.h"
-#include "geometry/vtk_debug.h"
+//#include "geometry/vtk_debug.h"
 #include "utils/algorithm.h"
 
 namespace gca {
@@ -120,7 +120,7 @@ namespace gca {
       }
     }
 
-    vtk_debug_polygons(polygons);
+    //vtk_debug_polygons(polygons);
 
     DBG_ASSERT(false);
   }

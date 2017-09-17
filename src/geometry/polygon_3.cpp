@@ -1,7 +1,7 @@
 #include "geometry/offset.h"
 #include "geometry/polygon_3.h"
 #include "geometry/rotation.h"
-#include "geometry/vtk_debug.h"
+//#include "geometry/vtk_debug.h"
 
 namespace gca {
 
@@ -14,7 +14,7 @@ namespace gca {
     // There is an occasional test failure here in simple box
     if (!(outer_ring.size() >= 3)) {
       cout << "ERROR: Outer ring size = " << outer_ring.size() << endl;
-      vtk_debug_ring(outer_ring);
+      //vtk_debug_ring(outer_ring);
 
       DBG_ASSERT(outer_ring.size() >= 3);
     }
@@ -54,11 +54,11 @@ namespace gca {
   }
   
   void check_simplicity(const polygon_3& p) {
-    check_simplicity(static_cast<const std::vector<point>&>(p.vertices()));
+    // check_simplicity(static_cast<const std::vector<point>&>(p.vertices()));
 
-    for (auto h : p.holes()) {
-      check_simplicity(static_cast<const std::vector<point>&>(h));
-    }
+    // for (auto h : p.holes()) {
+    //   check_simplicity(static_cast<const std::vector<point>&>(h));
+    // }
   }
 
   std::vector<point> project_points(const plane pl,

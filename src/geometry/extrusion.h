@@ -2,6 +2,7 @@
 #define GCA_EXTRUSION_H
 
 #include "geometry/polygon_3.h"
+#include "geometry/triangular_mesh.h"
 #include "geometry/vtk_utils.h"
 
 namespace gca {

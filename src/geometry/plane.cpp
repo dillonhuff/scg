@@ -52,7 +52,7 @@ namespace gca {
       ppts.pop_back();
     }
 
-    check_simplicity(ppts);
+    //check_simplicity(ppts);
 
     return ppts;
   }
