@@ -62,7 +62,9 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 #./src/geometry/vtk_debug.cpp
 	 #./src/geometry/vtk_utils.cpp)
 
-add_library(geometry ${GEOMETRY_CPPS} ${GEOMETRY_HEADERS})
+add_library(geometry ${GEOMETRY_CPPS})
+#${GEOMETRY_HEADERS})
+
 target_link_libraries(geometry utils ${CGAL_LIBRARIES})
 
 # /Users/dillon/CppWorkspace/gca/src/triangle_lib/triangle.o)
