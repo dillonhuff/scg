@@ -44,16 +44,17 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 #./src/geometry/extrusion.cpp
 	 ./src/geometry/plane.cpp
 	 ./src/geometry/line.cpp
-	 #./src/geometry/matrix.cpp
+	 ./src/geometry/matrix.cpp
 	 ./src/geometry/polygon.cpp
 	 ./src/geometry/polyline.cpp
 	 ./src/geometry/spline_sampling.cpp
-	 #./src/geometry/rotation.cpp
+	 ./src/geometry/rotation.cpp
 	 ./src/geometry/triangle.cpp
 	 ./src/geometry/triangular_mesh.cpp
 	 ./src/geometry/triangular_mesh_utils.cpp
 	 ./src/geometry/trimesh.cpp
-	 ./src/geometry/trimesh_types.cpp)
+	 ./src/geometry/trimesh_types.cpp
+	 ./src/system/parse_stl.cpp)
 
 #./src/geometry/homogeneous_transformation.cpp
 	 #./src/geometry/mesh_operations.cpp
