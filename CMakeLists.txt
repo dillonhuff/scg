@@ -36,24 +36,12 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 ./src/geometry/triangular_mesh_utils.cpp
 	 ./src/geometry/trimesh.cpp
 	 ./src/geometry/trimesh_types.cpp
-	 ./src/system/parse_stl.cpp)
-
-#./src/geometry/homogeneous_transformation.cpp
-	 #./src/geometry/mesh_operations.cpp
-	 #./src/geometry/voxel_volume.cpp
-	 #./src/geometry/voxel_volume_debug.cpp)
-	 #./src/geometry/vtk_debug.cpp
-	 #./src/geometry/vtk_utils.cpp)
+	 ./src/system/parse_stl.cpp
+	 ./src/geometry/homogeneous_transformation.cpp)
 
 add_library(geometry ${GEOMETRY_CPPS})
 
-#${GEOMETRY_HEADERS})
-
 target_link_libraries(geometry utils)
-
-#${CGAL_LIBRARIES})
-
-# /Users/dillon/CppWorkspace/gca/src/triangle_lib/triangle.o)
 
 SET(GEOMETRY_TEST_FILES test/plane_tests.cpp
 			test/rotation_tests.cpp
