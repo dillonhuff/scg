@@ -23,7 +23,6 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 ./src/geometry/arc.cpp
 	 ./src/geometry/box.cpp
 	 ./src/geometry/depth_field.cpp
-	 #./src/geometry/extrusion.cpp
 	 ./src/geometry/plane.cpp
 	 ./src/geometry/line.cpp
 	 ./src/geometry/matrix.cpp
