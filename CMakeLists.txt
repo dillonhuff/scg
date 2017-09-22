@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-project(ecg)
+project(scg)
 
 SET( EXTRA_CXX_COMPILE_FLAGS "-std=c++11 -I./src -I./test -I/opt/local/include -O2")
 
