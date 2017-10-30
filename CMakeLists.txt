@@ -57,4 +57,3 @@ SET(GEOMETRY_TEST_FILES test/plane_tests.cpp
 
 add_executable(geometry-tests test/main_geometry.cpp ${GEOMETRY_TEST_FILES})
 target_link_libraries(geometry-tests geometry utils)
-
