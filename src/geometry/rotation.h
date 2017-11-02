@@ -7,7 +7,7 @@
 
 namespace gca {
 
-  typedef ublas::matrix<double> rotation;
+  typedef matrix rotation;
 
   rotation rotate_from_to(const point from, const point to);
 
