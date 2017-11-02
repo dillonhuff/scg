@@ -21,19 +21,8 @@ namespace gca {
 
   polygon_3 apply(const rotation& r, const polygon_3& p);
 
-  boost_multipoly_2
-  to_boost_multipoly_2(const rotation& r, const std::vector<polygon_3>& lines);
-
   polygon_3 apply_no_check(const rotation& r, const polygon_3& p);
 
-  
-  labeled_polygon_3
-  to_labeled_polygon_3(const rotation& r, const double z, const boost_poly_2& p);
-
-  boost::optional<polygon_3>
-  to_labeled_polygon_3_maybe(const rotation& r,
-			     const double z,
-			     const boost_poly_2& p);
 
 }
 
