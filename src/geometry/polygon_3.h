@@ -25,14 +25,6 @@ namespace gca {
     std::vector<point> outer_ring;
     std::vector<std::vector<point>> inner_rings;
   public:
-    // polygon_3(const std::vector<point> vertices) :
-    //   outer_ring(vertices) {
-
-    //   outer_ring = clean_vertices(outer_ring);
-    //   delete_antennas(outer_ring);
-
-    //   DBG_ASSERT(outer_ring.size() >= 3);
-    // }
 
     polygon_3(const std::vector<point>& vertices,
 	      const std::vector<std::vector<point>>& hole_verts,
@@ -44,9 +36,6 @@ namespace gca {
       DBG_ASSERT(outer_ring.size() >= 3);
     }
     
-    // polygon_3(const std::vector<point> vertices,
-    // 		      const std::vector<std::vector<point>> hole_verts);
-
     void add_hole(const std::vector<point>& hole) {
       inner_rings.push_back(hole);
     }
@@ -97,8 +86,6 @@ namespace gca {
   std::vector<point> project_points(const plane pl,
 				    const std::vector<point>& pts);
 
-  boost_poly_2 rotate_to_2D(const labeled_polygon_3& p);
-
   double area(const polygon_3& p);
 
   double area(const std::vector<polygon_3>& p);
@@ -110,16 +97,10 @@ namespace gca {
   planar_polygon_union(const point n,
 		       const std::vector<polygon_3>& polys);
   
-  boost_multipoly_2
-  planar_union_boost(const std::vector<polygon_3>& polys);
-  
   polygon_3
   convex_hull_2D(const std::vector<point>& pts,
 		 const point n,
 		 const double z_level);
-
-  polygon_3
-  to_polygon_3(const double z, const boost_poly_2& p);
 
   box bounding_box(const polygon_3& p);
 
@@ -157,10 +138,6 @@ namespace gca {
 
   int curve_count(const polygon_3& f);
 
-  // vector<polygon_3> from_boost_multipoly_2(const boost_multipoly_2& p,
-  // 					   const rotation& r,
-  // 					   const double z_level);
-  
   std::vector<polygon_3>
   polygon_difference(const std::vector<polygon_3>& as,
 		     const std::vector<polygon_3>& bs);

@@ -1,7 +1,5 @@
-// #include "geometry/offset.h"
 #include "geometry/polygon_3.h"
 #include "geometry/rotation.h"
-// //#include "geometry/vtk_debug.h"
 
 namespace gca {
 
@@ -103,7 +101,7 @@ namespace gca {
     for (int i = 0; i < p.holes().size(); i++) {
       auto& h = p.holes()[i];
       for (auto p : h) {
-	boost::geometry::append(pr, boost::geometry::model::d2::point_xy<double>(p.x, p.y), i);
+        boost::geometry::append(pr, boost::geometry::model::d2::point_xy<double>(p.x, p.y), i);
       }
     }
 
@@ -112,26 +110,26 @@ namespace gca {
     return pr;
   }
 
-//   polygon_3
-//   to_polygon_3(const double z, const boost_poly_2& p) {
-//     vector<point> vertices;
-//     for (auto p2d : boost::geometry::exterior_ring(p)) {
-//       point pt(p2d.get<0>(), p2d.get<1>(), z);
-//       vertices.push_back(pt);
-//     }
+  polygon_3
+  to_polygon_3(const double z, const boost_poly_2& p) {
+    vector<point> vertices;
+    for (auto p2d : boost::geometry::exterior_ring(p)) {
+      point pt(p2d.get<0>(), p2d.get<1>(), z);
+      vertices.push_back(pt);
+    }
 
-//     vector<vector<point>> holes;
-//     for (auto ir : boost::geometry::interior_rings(p)) {
-//       vector<point> hole_verts;
-//       for (auto p2d : ir) {
-// 	point pt(p2d.get<0>(), p2d.get<1>(), z);
-// 	hole_verts.push_back(pt);
-//       }
-//       holes.push_back(clean_vertices(hole_verts));
-//     }
-//     return build_clean_polygon_3(clean_vertices(vertices), holes);
+    vector<vector<point>> holes;
+    for (auto ir : boost::geometry::interior_rings(p)) {
+      vector<point> hole_verts;
+      for (auto p2d : ir) {
+	point pt(p2d.get<0>(), p2d.get<1>(), z);
+	hole_verts.push_back(pt);
+      }
+      holes.push_back(clean_vertices(hole_verts));
+    }
+    return build_clean_polygon_3(clean_vertices(vertices), holes);
 
-//   }
+  }
 
   boost_poly_2 rotate_to_2D(const labeled_polygon_3& p) {
     const rotation r = rotate_from_to(p.normal(), point(0, 0, 1));

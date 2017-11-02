@@ -24,7 +24,7 @@ namespace gca {
   homogeneous_transform
   apply(const point d, const homogeneous_transform& t);
 
-    polygon_3 apply(const homogeneous_transform& r, const polygon_3& p);
+  polygon_3 apply(const homogeneous_transform& r, const polygon_3& p);
 
 }
 
