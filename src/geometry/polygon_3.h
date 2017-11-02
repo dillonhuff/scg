@@ -77,9 +77,6 @@ namespace gca {
 
   labeled_polygon_3 dilate(const labeled_polygon_3& p, const double tol);
 
-  boost_poly_2
-  to_boost_poly_2(const labeled_polygon_3& p);
-
   labeled_polygon_3 project_onto(const plane p,
 				 const labeled_polygon_3& poly);
 
@@ -105,9 +102,6 @@ namespace gca {
   box bounding_box(const polygon_3& p);
 
   polygon_3 project(const polygon_3& p, double z);
-
-  boost_multipoly_2
-  to_boost_multipoly_2(const std::vector<polygon_3>& lines);
 
   polygon_3
   build_clean_polygon_3(const std::vector<point>& vertices,

@@ -186,15 +186,6 @@ namespace gca {
     return polyline(applied);
   }
 
-  // boost_multipoly_2
-  // to_boost_multipoly_2(const rotation&r, const std::vector<polygon_3>& lines) {
-  //   boost_multipoly_2 res;
-  //   for (auto& pl : lines) {
-  //     res.push_back(to_boost_poly_2(apply(r, pl)));
-  //   }
-  //   return res;
-  // }
-
   polygon_3 apply_no_check(const rotation& r, const polygon_3& p) {
     vector<point> pts = apply(r, p.vertices());
 
@@ -235,55 +226,5 @@ namespace gca {
     return outer_ring;
   }
 
-  // labeled_polygon_3
-  // to_labeled_polygon_3(const rotation& r, const double z, const boost_poly_2& p) {
-  //   vector<point> vertices;
-  //   for (auto p2d : boost::geometry::exterior_ring(p)) {
-  //     point pt(p2d.get<0>(), p2d.get<1>(), z);
-  //     vertices.push_back(times_3(r, pt));
-  //   }
-
-  //   vector<vector<point>> holes;
-  //   for (auto ir : boost::geometry::interior_rings(p)) {
-  //     vector<point> hole_verts;
-  //     for (auto p2d : ir) {
-  //       point pt(p2d.get<0>(), p2d.get<1>(), z);
-  //       hole_verts.push_back(times_3(r, pt));
-  //     }
-  //     holes.push_back(clean_vertices(hole_verts));
-  //   }
-  //   return build_clean_polygon_3(clean_vertices(vertices), holes);
-  // }
-
-  // boost::optional<polygon_3>
-  // to_labeled_polygon_3_maybe(const rotation& r,
-  //       		     const double z,
-  //       		     const boost_poly_2& p) {
-  //   vector<point> vertices;
-  //   for (auto p2d : boost::geometry::exterior_ring(p)) {
-  //     point pt(p2d.get<0>(), p2d.get<1>(), z);
-  //     vertices.push_back(times_3(r, pt));
-  //   }
-
-  //   vertices = clean_for_conversion_to_polygon_3(vertices);
-
-  //   if (vertices.size() < 3) { return boost::none; }
-
-  //   vector<vector<point>> holes;
-  //   for (auto ir : boost::geometry::interior_rings(p)) {
-  //     vector<point> hole_verts;
-  //     for (auto p2d : ir) {
-  //       point pt(p2d.get<0>(), p2d.get<1>(), z);
-  //       hole_verts.push_back(times_3(r, pt));
-  //     }
-
-  //     hole_verts = clean_for_conversion_to_polygon_3(hole_verts);
-  //     if (hole_verts.size() >= 3) {
-  //       holes.push_back(hole_verts);
-  //     }
-  //   }
-
-  //   return build_clean_polygon_3(vertices, holes);
-  // }
 
 }
