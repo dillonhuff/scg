@@ -1,7 +1,23 @@
 #include "geometry/polygon_3.h"
+
 #include "geometry/rotation.h"
 
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point_xy.hpp>
+#include <boost/geometry/geometries/polygon.hpp>
+
+
 namespace gca {
+
+  namespace bg = boost::geometry;
+
+  typedef bg::model::d2::point_xy<double> boost_point_2;
+  typedef bg::model::polygon<boost_point_2> boost_poly_2;
+  typedef bg::model::multi_polygon<boost_poly_2> boost_multipoly_2;
+  typedef bg::model::multi_point<boost_point_2> boost_multipoint_2;
+
+  typedef bg::model::linestring<boost_point_2> boost_linestring_2;
+  typedef bg::model::multi_linestring<boost_linestring_2> boost_multilinestring_2;
 
   polygon_3
   build_clean_polygon_3(const std::vector<point>& vertices,
