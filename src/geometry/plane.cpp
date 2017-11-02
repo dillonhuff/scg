@@ -1,4 +1,3 @@
-#include "geometry/offset.h"
 #include "geometry/plane.h"
 #include "geometry/ring.h"
 
