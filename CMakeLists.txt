@@ -33,6 +33,7 @@ SET(GEOMETRY_CPPS ./src/geometry/point.cpp
 	 ./src/geometry/triangular_mesh_utils.cpp
 	 ./src/geometry/trimesh.cpp
 	 ./src/geometry/trimesh_types.cpp
+         ./src/geometry/voxel_volume.cpp
 	 ./src/system/parse_stl.cpp
 	 ./src/geometry/homogeneous_transformation.cpp)
 
