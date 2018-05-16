@@ -7,8 +7,8 @@ SCG is a simple, value oriented, MIT License library for 3D computational geomet
 * 3D points
 * Planes
 * Triangles
-* Triangular meshes
-* Rrotations and homogeneous transformations
+* Triangular meshes (stored using a halfedge data structure)
+* Rotations and homogeneous transformations
 * Height fields
 * Voxel volumes
 
