@@ -39,7 +39,7 @@ namespace gca {
     return pm_sign;
   }
 
-  double determinant(ublas::matrix<double>& m) {
+  double determinant(matrix& m) {
     ublas::permutation_matrix<size_t> pm(m.size1());
     double det = 1.0;
     if( lu_factorize(m,pm) ) {
@@ -52,13 +52,13 @@ namespace gca {
     return det;
   }
 
-  double determinant(const ublas::matrix<double>& m) {
-    ublas::matrix<double> l = m;
+  double determinant(const matrix& m) {
+    matrix l = m;
     return determinant(l);
   }
 
-  ublas::matrix<double> inverse(ublas::matrix<double>& a) {
-    ublas::matrix<double> a_inv = ublas::identity_matrix<double>(a.size1());
+  matrix inverse(matrix& a) {
+    matrix a_inv = ublas::identity_matrix<double>(a.size1());
     ublas::permutation_matrix<size_t> pm(a.size1());
     int res = lu_factorize(a, pm);
     if (!res) {
@@ -71,17 +71,17 @@ namespace gca {
     return a_inv;
   }
 
-  ublas::matrix<double> inverse(const ublas::matrix<double>& a) {
-    ublas::matrix<double> b = a;
+  matrix inverse(const matrix& a) {
+    matrix b = a;
     return inverse(b);
   }
 
   using namespace gca;
 
-  ublas::matrix<double>
+  matrix
   plane_basis_rotation(const point at, const point bt, const point ct,
 		       const point apt, const point bpt, const point cpt) {
-    boost::numeric::ublas::matrix<double> a(3, 3);
+    matrix a(3, 3);
     a(0, 0) = at.x;
     a(1, 0) = at.y;
     a(2, 0) = at.z;
@@ -94,7 +94,7 @@ namespace gca {
     a(1, 2) = ct.y;
     a(2, 2) = ct.z;
   
-    boost::numeric::ublas::matrix<double> b(3, 3);
+    matrix b(3, 3);
     b(0, 0) = apt.x;
     b(1, 0) = apt.y;
     b(2, 0) = apt.z;
@@ -125,7 +125,7 @@ namespace gca {
   }
 
   vec
-  plane_basis_displacement(const boost::numeric::ublas::matrix<double>& r,
+  plane_basis_displacement(const matrix& r,
 			   const point u1, const point u2, const point u3,
 			   const point q1, const point q2, const point q3,
 			   const point p1, const point p2, const point p3) {
@@ -146,7 +146,7 @@ namespace gca {
     s(1) = inner_prod(qv2, uv2) - inner_prod(prod(r, pv2), uv2);
     s(2) = inner_prod(qv3, uv3) - inner_prod(prod(r, pv3), uv3);
 
-    boost::numeric::ublas::matrix<double> u(3, 3);
+    matrix u(3, 3);
     u(0, 0) = uv1(0);
     u(0, 1) = uv1(1);
     u(0, 2) = uv1(2);
@@ -164,7 +164,7 @@ namespace gca {
     return prod(u_inv, s);
   }
 
-  point times_3(const ublas::matrix<double> m, const point p) {
+  point times_3(const matrix m, const point p) {
     auto v = to_vector(p);
     return from_vector(prod(m, v));
   }
