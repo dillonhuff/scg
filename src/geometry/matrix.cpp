@@ -111,9 +111,9 @@ namespace gca {
     return prod(b, a_inv);
   }
 
-  boost::numeric::ublas::vector<double>
+  vec
   to_vector(const point p) {
-    boost::numeric::ublas::vector<double> v(3);
+    vec v(3);
     v(0) = p.x;
     v(1) = p.y;
     v(2) = p.z;
@@ -124,24 +124,24 @@ namespace gca {
     return point(v(0), v(1), v(2));
   }
 
-  boost::numeric::ublas::vector<double>
+  vec
   plane_basis_displacement(const boost::numeric::ublas::matrix<double>& r,
 			   const point u1, const point u2, const point u3,
 			   const point q1, const point q2, const point q3,
 			   const point p1, const point p2, const point p3) {
-    boost::numeric::ublas::vector<double> uv1 = to_vector(u1);
-    boost::numeric::ublas::vector<double> uv2 = to_vector(u2);
-    boost::numeric::ublas::vector<double> uv3 = to_vector(u3);
+    vec uv1 = to_vector(u1);
+    vec uv2 = to_vector(u2);
+    vec uv3 = to_vector(u3);
 
-    boost::numeric::ublas::vector<double> qv1 = to_vector(q1);
-    boost::numeric::ublas::vector<double> qv2 = to_vector(q2);
-    boost::numeric::ublas::vector<double> qv3 = to_vector(q3);
+    vec qv1 = to_vector(q1);
+    vec qv2 = to_vector(q2);
+    vec qv3 = to_vector(q3);
 
-    boost::numeric::ublas::vector<double> pv1 = to_vector(p1);
-    boost::numeric::ublas::vector<double> pv2 = to_vector(p2);
-    boost::numeric::ublas::vector<double> pv3 = to_vector(p3);
+    vec pv1 = to_vector(p1);
+    vec pv2 = to_vector(p2);
+    vec pv3 = to_vector(p3);
 
-    boost::numeric::ublas::vector<double> s(3);
+    vec s(3);
     s(0) = inner_prod(qv1, uv1) - inner_prod(prod(r, pv1), uv1);
     s(1) = inner_prod(qv2, uv2) - inner_prod(prod(r, pv2), uv2);
     s(2) = inner_prod(qv3, uv3) - inner_prod(prod(r, pv3), uv3);

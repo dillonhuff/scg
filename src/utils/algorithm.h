@@ -584,6 +584,10 @@ namespace gca {
     T t;
     maybe() : just(false), t() {}
     maybe(T tp) : just(true), t(tp) {}
+
+    bool has_value() const { return just; }
+    
+    T get_value() const { return t; }
   };
 
 }
