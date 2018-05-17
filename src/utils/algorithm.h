@@ -577,6 +577,15 @@ namespace gca {
     return false;
   }
 
+  // TODO: This really belongs in utils
+  template<typename T>
+  struct maybe {
+    bool just;
+    T t;
+    maybe() : just(false), t() {}
+    maybe(T tp) : just(true), t(tp) {}
+  };
+
 }
 
 #endif

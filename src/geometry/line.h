@@ -2,17 +2,9 @@
 #define GCA_LINE_H
 
 #include "geometry/point.h"
+#include "utils/algorithm.h"
 
 namespace gca {
-
-  // TODO: This really belongs in utils
-  template<typename T>
-  struct maybe {
-    bool just;
-    T t;
-    maybe() : just(false), t() {}
-    maybe(T tp) : just(true), t(tp) {}
-  };
 
   struct line {
     point start, end;
