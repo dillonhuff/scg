@@ -16,6 +16,16 @@ SCG also has a built in binary STL file parser to load data in to triangular mes
 
 ## Examples
 
+### Computing the rotation that will map one 3D vector onto another
+
+```cpp
+point from(1, 1, 0);
+point to(0, 0, 1);
+
+const rotation r = rotate_from_to(from, to);
+
+```
+
 ### Loading a mesh from an STL file
 
 ```cpp
