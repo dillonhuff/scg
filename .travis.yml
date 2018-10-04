@@ -7,7 +7,7 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - libboost-all-dev
+    - libboost-all
     - g++-4.9
 
 before_install:
