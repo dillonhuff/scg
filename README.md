@@ -2,17 +2,22 @@
 
 SCG is a simple, value oriented, MIT License library for 3D computational geometry in C++11.
 
-## Data Structures
+## Build Instructions
 
-* 3D points
-* Planes
-* Triangles
-* Triangular meshes (stored using a halfedge data structure)
-* Rotations and homogeneous transformations
-* Height fields
-* Voxel volumes
+After cloning the repo cd into the top directory of the project. Then do:
 
-SCG also has a built in binary STL file parser to load data in to triangular meshes.
+```bash
+cmake .
+make -j
+```
+
+This will build libutils.a, libgeometry.a and the unit tests named geometry-tests.
+
+To run the tests do:
+
+```bash
+./geometry-tests 
+```
 
 ## Examples
 
@@ -42,6 +47,18 @@ const rotation r = rotate_from_to(from, to);
 auto triangles = parse_stl("./test/stl-files/SlicedCone.stl").triangles;
 triangular_mesh m = make_mesh(triangles, 0.001);
 ```
+
+## Data Structures
+
+* 3D points
+* Planes
+* Triangles
+* Triangular meshes (stored using a halfedge data structure)
+* Rotations and homogeneous transformations
+* Height fields
+* Voxel volumes
+
+SCG also has a built in binary STL file parser to load data in to triangular meshes.
 
 ## Dependecies
 * boost
