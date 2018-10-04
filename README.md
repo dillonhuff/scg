@@ -19,9 +19,6 @@ SCG also has a built in binary STL file parser to load data in to triangular mes
 ### Loading a mesh from an STL file
 
 ```cpp
-arena_allocator a;
-set_system_allocator(&a);
-
 auto triangles = parse_stl("./test/stl-files/SlicedCone.stl").triangles;
 triangular_mesh m = make_mesh(triangles, 0.001);
 ```
