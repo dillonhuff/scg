@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/dillonhuff/scg.svg?branch=master)](https://travis-ci.org/dillonhuff/scg)
-
 # Simple 3D Computational Geometry
 
 SCG is a simple, value oriented, MIT License library for 3D computational geometry in C++11.
