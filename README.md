@@ -16,6 +16,16 @@ SCG also has a built in binary STL file parser to load data in to triangular mes
 
 ## Examples
 
+## Finding the angle between two vectors
+
+```cpp
+point p(1, 1, 0);
+point q(-1, -1, 0);
+double a = angle_between(p, q);
+assert(within_eps(a, 180, 0.00001));
+
+```
+
 ### Computing the rotation that will map one 3D vector onto another
 
 ```cpp
