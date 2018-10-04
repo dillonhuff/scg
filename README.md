@@ -11,7 +11,10 @@ cmake .
 make -j
 ```
 
-This will build libutils.a, libgeometry.a and the unit tests named geometry-tests.
+This will build several things.
+* libutils.a: A utility library used by the main geometry library
+* libgeometry.a: The geometry library itself.
+* geometry-tests: The unit tests for this library
 
 To run the tests do:
 
