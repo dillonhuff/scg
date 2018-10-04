@@ -1,6 +1,7 @@
 #ifndef GCA_SYSTEM_ALGORITHM_H
 #define GCA_SYSTEM_ALGORITHM_H
 
+#include <algorithm>
 #include <cassert>
 #include <iostream>
 #include <map>
