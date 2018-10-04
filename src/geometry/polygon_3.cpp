@@ -70,8 +70,8 @@ namespace gca {
   boost_poly_2
   to_boost_poly_2(const labeled_polygon_3& p) {
     boost_poly_2 pr;
-    for (auto p : p.vertices()) {
-      boost::geometry::append(pr, boost::geometry::model::d2::point_xy<double>(p.x, p.y));
+    for (auto poly : p.vertices()) {
+      boost::geometry::append(pr, boost::geometry::model::d2::point_xy<double>(poly.x, poly.y));
     }
 
     boost::geometry::interior_rings(pr).resize(p.holes().size());
