@@ -15,6 +15,7 @@ This will build several things.
 * libutils.a: A utility library used by the main geometry library
 * libgeometry.a: The geometry library itself.
 * geometry-tests: The unit tests for this library
+* example-programs: An executable that contains some samples of how to use this library
 
 To run the tests do:
 
