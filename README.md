@@ -57,6 +57,7 @@ triangular_mesh m = make_mesh(triangles, 0.001);
 * 3D points
 * Planes
 * Triangles
+* Boxes
 * Triangular meshes (stored using a halfedge data structure)
 * Rotations and homogeneous transformations
 * Height fields
