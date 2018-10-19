@@ -15,12 +15,18 @@ This will build several things.
 * libutils.a: A utility library used by the main geometry library
 * libgeometry.a: The geometry library itself.
 * geometry-tests: The unit tests for this library
-* example-programs: An executable that contains some samples of how to use this library
+* run-examples: An executable that contains some samples of how to use this library
 
 To run the tests do:
 
 ```bash
 ./geometry-tests 
+```
+
+To run the examples do:
+
+```bash
+./run-examples
 ```
 
 ## Examples
@@ -35,14 +41,15 @@ assert(within_eps(a, 180, 0.00001));
 
 ```
 
-### Computing the rotation that will map one 3D vector onto another
+### Finding a rotation from point vector onto another
 
 ```cpp
-point from(1, 1, 0);
+point from(1, 0, 0);
 point to(0, 0, 1);
 
 const rotation r = rotate_from_to(from, to);
 
+cout << apply(r, from) << endl;
 ```
 
 ### Loading a mesh from an STL file

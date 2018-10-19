@@ -59,5 +59,5 @@ add_executable(geometry-tests test/main_geometry.cpp ${GEOMETRY_TEST_FILES})
 target_link_libraries(geometry-tests geometry utils)
 
 # Examples
-add_executable(example-programs examples/examples.cpp)
-target_link_libraries(example-programs geometry utils)
+add_executable(run-examples examples/examples.cpp)
+target_link_libraries(run-examples geometry utils)
