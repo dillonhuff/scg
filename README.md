@@ -57,6 +57,7 @@ cout << apply(r, from) << endl;
 ```cpp
 auto triangles = parse_stl("./test/stl-files/SlicedCone.stl").triangles;
 triangular_mesh m = make_mesh(triangles, 0.001);
+cout << "# of triangles = " << m.triangle_list().size() << endl;
 ```
 
 ## Data Structures
