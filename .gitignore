@@ -8,3 +8,4 @@ libutils.a
 *.a
 geometry-tests
 example-programs
+run-examples
