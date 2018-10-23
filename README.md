@@ -2,33 +2,6 @@
 
 SCG is a simple, value oriented, MIT License library for 3D computational geometry in C++11.
 
-## Build Instructions
-
-After cloning the repo cd into the top directory of the project. Then do:
-
-```bash
-cmake .
-make -j
-```
-
-This will build several things.
-* libutils.a: A utility library used by the main geometry library
-* libgeometry.a: The geometry library itself.
-* geometry-tests: The unit tests for this library
-* run-examples: An executable that contains some samples of how to use this library
-
-To run the tests do:
-
-```bash
-./geometry-tests 
-```
-
-To run the examples do:
-
-```bash
-./run-examples
-```
-
 ## Examples
 
 ## Finding the angle between two vectors
@@ -58,6 +31,32 @@ cout << apply(r, from) << endl;
 auto triangles = parse_stl("./test/stl-files/SlicedCone.stl").triangles;
 triangular_mesh m = make_mesh(triangles, 0.001);
 cout << "# of triangles = " << m.triangle_list().size() << endl;
+```
+## Build Instructions
+
+After cloning the repo cd into the top directory of the project. Then do:
+
+```bash
+cmake .
+make -j
+```
+
+This will build several things.
+* libutils.a: A utility library used by the main geometry library
+* libgeometry.a: The geometry library itself.
+* geometry-tests: The unit tests for this library
+* run-examples: An executable that contains some samples of how to use this library
+
+To run the tests do:
+
+```bash
+./geometry-tests 
+```
+
+To run the examples do:
+
+```bash
+./run-examples
 ```
 
 ## Data Structures
