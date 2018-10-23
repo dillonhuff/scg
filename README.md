@@ -14,7 +14,7 @@ assert(within_eps(a, 180, 0.00001));
 
 ```
 
-### Finding a rotation from point vector onto another
+### Finding a rotation from one vector onto another
 
 ```cpp
 point from(1, 0, 0);
